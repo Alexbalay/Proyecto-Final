@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de registro de estudiantes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/main.css">
+</head>
+<body>
+
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="index.html">Home</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="index.html">Próximamente</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="index.html">Próximamente</a>
+        
+      </nav>
+        <body>
+      
+          <div id="divTitulo">
+              <h1 id="titulo">Bienvenido al sistema de registro de estudiantes</h1>
+          </div>
+          <div id="separador">
+      
+          </div>
+          <div id="buttons">
+            <button id="btnRegistrarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalRegistrarEstudiante" class="boton btn btn-primary">Registrar estudiante</button>
+            <button id="btnBuscarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalBuscarEstudiante" class="boton btn btn-primary">Buscar estudiante por DNI</button>
+            <button  id= "btnMostrarRegistro" type="button" class="boton btn btn-primary">Mostrar datos del registro</button> 
+            <button  id= "btnEliminarRegistro" type="button" class="boton btn btn-danger">Eliminar datos del registro</button> 
+            <button id="btnBorrarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalBorrarEstudiante" class="boton btn btn-primary disabled invisible">Borrar estudiante</button>
+          </div>
+      <!-- DIV DONDE SE VAN A AGREGAR LOS DATOS DEL ARRAY CUANDO SE PRESIONE EL BOTON DE MOSTRAR REGISTRO-->
+          <div class="container">
+            <div id="estudiantes" class="row"></div>
+        </div> 
+      
+      <!--Modal Agregar estudiante-->
+      <div class="modal fade" id="idModalRegistrarEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registrar estudiante</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <form id="formAgregarEstudiante">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombreInput" aria-describedby="nombre">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="apellidoInput" aria-describedby="apellido">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="DNI" class="form-label">DNI</label>
+                  <input type="text" class="form-control" id="dniInput" aria-describedby="dni">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="edad" class="form-label">Edad</label>
+                  <input type="text" class="form-control" id="edadInput" aria-describedby="edad">
+                  
+                </div>
+              </form>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="text" id="registrarEstudianteBtn" class="btn btn-success" data-bs-dismiss="modal">Registrar estudiante</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--Modal buscar estudiante-->
+      <div class="modal fade" id="idModalBuscarEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Buscar estudiante</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <form id="formBuscarEstudiantePorDNI">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">DNI</label>
+                  <input type="text" class="form-control" id="dniBuscadoInput" aria-describedby="dni">
+              </form>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="text" id="buscarDNIBtn" class="btn btn-success" data-bs-dismiss="modal">Buscar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Script Bootstrap-->
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+      <!--Script SweetAlert2-->
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+      <!--Script JS-->
+        <script src="./js/main.js"></script>
+</body>
+</html>

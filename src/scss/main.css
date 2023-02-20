@@ -11754,3 +11754,8 @@ textarea.form-control-lg {
 #separador {
   height: 30px;
 }
+
+.botonCambioTema {
+  margin-top: 20px;
+  margin-left: 3px;
+}

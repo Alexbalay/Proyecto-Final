@@ -16,8 +16,11 @@ class sistemaEstudiantes {
   let estudiantesDiv = document.getElementById("estudiantes")
   let mostrarRegistro = document.getElementById("btnMostrarRegistro")
   let btnVaciarRegistro = document.getElementById("btnEliminarRegistro")
+  let btnModoOscuro = document.getElementById("btnCambiarModoOscuro")
+  let btnModoClaro = document.getElementById("btnCambiarModoClaro")
+  let idDarkMode= document.getElementById("darkMode")
 
-  //Creo funcion para cargar estudiantes - OK CON DOM
+  //Creo funcion para cargar estudiantes
   function registrarEstudiantes(array) {
     let inputNombre = document.getElementById("nombreInput");
     let inputApellido = document.getElementById("apellidoInput");
@@ -28,7 +31,6 @@ class sistemaEstudiantes {
     localStorage.setItem("estudiantes", JSON.stringify(array))
     let formAgregarEstudiante = document.getElementById("formAgregarEstudiante")
     formAgregarEstudiante.reset()
-    console.log(array)
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -39,7 +41,7 @@ class sistemaEstudiantes {
     })
     }
   
-  //Funcion para buscar por DNI. OK - SE MUESTRA POR ALERT LUEGO PASARLO A JSON
+  //Funcion para buscar por DNI.
   function buscoPorDocumento(array) {
     let dniIngresado = document.getElementById("dniBuscadoInput")
     let busqueda = array.filter((elemento) => elemento.dni == parseInt(dniIngresado.value));
@@ -82,25 +84,36 @@ function verRegistro(array) {
 //Funcion que vacia todos los datos del registro
 function borroRegistro (){
           estudiantesDiv.remove()
-          localStorage.clear(estudiantes)
+          localStorage.removeItem("estudiantes")
 
 }
+//verifico storage y aplico modo oscuro o claro
+let modoOscuroStorage = JSON.parse(localStorage.getItem("modoOscuro"))
+if(modoOscuroStorage==true){
+  idDarkMode.attributes[2].textContent="dark"
+  btnModoOscuro.classList.add("invisible")
+}else{
+  idDarkMode.attributes[2].textContent="light"
+  btnModoClaro.classList.add("invisible")
+}
 
-  // Funcion para eliminar un elemento del array -- OK - NO EN DOM
-  function borrarEstudiante(array){
-    for(let elem of array){
-        console.log(`${elem.id} - ${elem.nombre} - ${elem.apellido}`)
-    }
-    let dniEliminar = parseInt(prompt("Ingrese el DNI a eliminar"))
-    let arrayDNI = array.map(el => el.dni)
-    let seleccion = arrayDNI.includes(dniEliminar)
-    array.splice(seleccion-1,1)
-  }
-  
-  
   //---------------------------------------------------HASTA ACÁ FUNCIONES---------------------------------------------------------//
   const estudiantes = [];
-//menu()
+
+  //Botones modo oscuro y claro
+  btnModoOscuro.addEventListener("click", () => {
+    idDarkMode.attributes[2].textContent="dark"
+    localStorage.setItem("modoOscuro", true)
+    btnModoOscuro.classList.add("invisible")
+    btnModoClaro.classList.remove("invisible")
+    })
+    btnModoClaro.addEventListener("click", () => {
+      idDarkMode.attributes[2].textContent="light"
+      localStorage.setItem("modoOscuro", false)
+      btnModoClaro.classList.add("invisible")
+      btnModoOscuro.classList.remove("invisible")
+      })
+  
 
 guardarEstudiante.addEventListener("click", ()=>{ 
   registrarEstudiantes(estudiantes) 
@@ -130,14 +143,10 @@ buscarPorDocumento.addEventListener("click", ()=>{
           'success',
           borroRegistro(),
           verRegistro(estudiantes),
-          localStorage.clear()
         )
       }
     })
   })
-  Swal.fire({
-    title: 'Error!',
-    text: 'Do you want to continue',
-    icon: 'error',
-    confirmButtonText: 'Cool'
-  })
+
+
+

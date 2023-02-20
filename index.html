@@ -20,8 +20,8 @@
       </nav>
         <body>
           <div class="container botonCambioTema">
-            <button id="btnCambiarModoOscuro" type="button" class="btn btn-outline-dark">Cambiar a modo oscuro</button>
-            <button id="btnCambiarModoClaro" type="button" class="btn btn-outline-light">Cambiar a modo claro</button>
+            <button id="btnCambiarModoOscuro" type="button" class="btn btn-outline-dark btn-sm">Cambiar a modo oscuro</button>
+            <button id="btnCambiarModoClaro" type="button" class="btn btn-outline-light btn-sm">Cambiar a modo claro</button>
           </div> 
       
           <div id="divTitulo">
@@ -34,13 +34,15 @@
             <button id="btnRegistrarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalRegistrarEstudiante" class="boton btn btn-primary">Registrar estudiante</button>
             <button id="btnBuscarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalBuscarEstudiante" class="boton btn btn-primary">Buscar estudiante por DNI</button>
             <button  id= "btnMostrarRegistro" type="button" class="boton btn btn-primary">Mostrar datos del registro</button> 
+            <button  id= "cargoJSON" type="button" class="boton btn btn-primary">Importar estudiantes desde archivo</button>
             <button  id= "btnEliminarRegistro" type="button" class="boton btn btn-danger">Eliminar datos del registro</button> 
-            <button id="btnBorrarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalBorrarEstudiante" class="boton btn btn-primary disabled invisible">Borrar estudiante</button>
           </div>
       <!-- DIV DONDE SE VAN A AGREGAR LOS DATOS DEL ARRAY CUANDO SE PRESIONE EL BOTON DE MOSTRAR REGISTRO-->
           <div class="container">
             <div id="estudiantes" class="row"></div>
         </div> 
+
+         
       
       <!--Modal Agregar estudiante-->
       <div class="modal fade" id="idModalRegistrarEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,8 +84,8 @@
           </div>
         </div>
       </div>
-      
-      <!--Modal buscar estudiante-->
+
+      <!--Modal buscar estudiante por DNI-->
       <div class="modal fade" id="idModalBuscarEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -106,7 +108,6 @@
           </div>
         </div>
       </div>
-
 
       <!--Script Bootstrap-->
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

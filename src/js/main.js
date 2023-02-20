@@ -19,6 +19,31 @@ class sistemaEstudiantes {
   let btnModoOscuro = document.getElementById("btnCambiarModoOscuro")
   let btnModoClaro = document.getElementById("btnCambiarModoClaro")
   let idDarkMode= document.getElementById("darkMode")
+  let btnJSON = document.getElementById("cargoJSON")
+
+  //Leo archivo .JSON con Async Await
+  const arrayHP = async ()=>{
+    const response = await fetch("harryPotterCharacters.json")
+    const data = await response.json()
+    
+    for (let elem of data) {
+      let nuevoEstudianteDiv = document.createElement("div")
+      nuevoEstudianteDiv.className = "col-12 col-md-6 col-lg-4 my-3"
+      nuevoEstudianteDiv.innerHTML = `
+            <div id="${elem.id}" class="card" style="width: 21rem;">
+                    <h4 class="card-title" style = "text-align: center;">Información del estudiante ${elem.id}</h4>
+                    <p style = "margin-left: 20px"><strong>Nombre: </strong> ${elem.name}</p>
+                    <p style = "margin-left: 20px"><strong>Apellido: </strong>${elem.lastName}</p>
+                    <p style = "margin-left: 20px" class=""><strong>Documento: </strong>Sin información</p>
+                    <p style = "margin-left: 20px" class=""><strong>Edad: </strong>${elem.age}</p>
+                </div>
+            </div> 
+            `
+      estudiantesDiv.appendChild(nuevoEstudianteDiv)
+      localStorage.setItem("estudiantesHP", JSON.stringify(data))
+  
+    }}
+ 
 
   //Creo funcion para cargar estudiantes
   function registrarEstudiantes(array) {
@@ -58,7 +83,6 @@ class sistemaEstudiantes {
       })
     }
 }    
-    
 
 
 function verRegistro(array) {
@@ -147,6 +171,9 @@ buscarPorDocumento.addEventListener("click", ()=>{
       }
     })
   })
+btnJSON.addEventListener("click", ()=>{
+  arrayHP()
+})
 
 
 

@@ -1,0 +1,79 @@
+[
+    {"id": "9e3f7ce4",
+    "name": "Harry",
+    "lastName":"Potter",
+    "species": "human",
+    "gender": "male",
+    "house": "Gryffindor",
+    "dateOfBirth": "31-07-1980",
+    "yearOfBirth": 1980,
+    "age": 42,
+    "wizard": true,
+    "ancestry": "half-blood",
+    "eyeColour": "green",
+    "hairColour": "black",
+    "patronus": "stag",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false,
+    "actor": "Daniel Radcliffe",
+    "image": "https://ik.imagekit.io/hpapi/harry.jpg"
+  },
+  {
+    "id": "4c7e6819",
+    "name": "Hermione",
+    "lastName": "Granger",
+    "species": "human",
+    "gender": "female",
+    "house": "Gryffindor",
+    "dateOfBirth": "19-09-1979",
+    "yearOfBirth": 1979,
+    "age": 43,
+    "wizard": true,
+    "ancestry": "muggleborn",
+    "eyeColour": "brown",
+    "hairColour": "brown",
+    "wand": {
+      "wood": "vine",
+      "core": "dragon heartstring",
+      "length": null
+    },
+    "patronus": "otter",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false,
+    "actor": "Emma Watson",
+    "alternate_actors": [
+      
+    ],
+    "alive": true,
+    "image": "https://ik.imagekit.io/hpapi/hermione.jpeg"
+  },
+  {
+    "id": "c3b1f9a5",
+    "name": "Ron",
+    "lastName":"Weasley",
+    "species": "human",
+    "gender": "male",
+    "house": "Gryffindor",
+    "dateOfBirth": "01-03-1980",
+    "yearOfBirth": 1980,
+    "age": 42,
+    "wizard": true,
+    "ancestry": "pure-blood",
+    "eyeColour": "blue",
+    "hairColour": "red",
+    "wand": {
+      "wood": "willow",
+      "core": "unicorn tail-hair",
+      "length": 14
+    },
+    "patronus": "Jack Russell terrier",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false,
+    "actor": "Rupert Grint",
+    "alternate_actors": [
+      
+    ],
+    "alive": true,
+    "image": "https://ik.imagekit.io/hpapi/ron.jpg"
+  }
+]

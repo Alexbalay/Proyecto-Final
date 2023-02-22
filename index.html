@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/scss/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
 
@@ -19,13 +20,15 @@
         
       </nav>
         <body>
+          
+          
           <div class="container botonCambioTema">
             <button id="btnCambiarModoOscuro" type="button" class="btn btn-outline-dark btn-sm">Cambiar a modo oscuro</button>
             <button id="btnCambiarModoClaro" type="button" class="btn btn-outline-light btn-sm">Cambiar a modo claro</button>
           </div> 
       
           <div id="divTitulo">
-              <h1 id="titulo">Bienvenido al sistema de registro de estudiantes</h1>
+              <h1 class= "animate__animated animate__fadeIn" id="titulo">Bienvenido al sistema de registro de estudiantes</h1>
           </div>
           <div id="separador">
       
@@ -37,13 +40,15 @@
             <button  id= "cargoJSON" type="button" class="boton btn btn-primary">Importar estudiantes desde archivo</button>
             <button  id= "btnEliminarRegistro" type="button" class="boton btn btn-danger">Eliminar datos del registro</button> 
           </div>
-      <!-- DIV DONDE SE VAN A AGREGAR LOS DATOS DEL ARRAY CUANDO SE PRESIONE EL BOTON DE MOSTRAR REGISTRO-->
+      <!-- DIV DONDE SE VAN A AGREGAR LOS DATOS DEL ARRAY ESTUDIANTES CUANDO SE PRESIONE EL BOTON DE MOSTRAR REGISTRO-->
           <div class="container">
             <div id="estudiantes" class="row"></div>
         </div> 
-
-         
-      
+      <!--Div donde van los datos del array obtenido del archivo .JSON-->
+        <div class="container">
+          <div id="estudiantesHP" class="row"></div>
+      </div> 
+    
       <!--Modal Agregar estudiante-->
       <div class="modal fade" id="idModalRegistrarEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -108,7 +113,6 @@
           </div>
         </div>
       </div>
-
       <!--Script Bootstrap-->
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
       <!--Script SweetAlert2-->

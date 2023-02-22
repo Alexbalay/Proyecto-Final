@@ -20,29 +20,36 @@ class sistemaEstudiantes {
   let btnModoClaro = document.getElementById("btnCambiarModoClaro")
   let idDarkMode= document.getElementById("darkMode")
   let btnJSON = document.getElementById("cargoJSON")
+  let estudiantesHP = document.getElementById("estudiantesHP")
 
-  //Leo archivo .JSON con Async Await
+  
+
+  let arrayProcessed = false
+
+  //Leo archivo .JSON con Async Await y aplico en DOM
+  
   const arrayHP = async ()=>{
-    const response = await fetch("harryPotterCharacters.json")
+      const response = await fetch("harryPotterCharacters.json")
     const data = await response.json()
-    
     for (let elem of data) {
       let nuevoEstudianteDiv = document.createElement("div")
       nuevoEstudianteDiv.className = "col-12 col-md-6 col-lg-4 my-3"
       nuevoEstudianteDiv.innerHTML = `
             <div id="${elem.id}" class="card" style="width: 21rem;">
                     <h4 class="card-title" style = "text-align: center;">Información del estudiante ${elem.id}</h4>
+                    <img class="card-img-top" height="300px" src="${elem.image}" alt="">
+                    <p style = "margin-left: 20px" class=""><strong>Informacion importada de archivo .JSON</strong></p>
                     <p style = "margin-left: 20px"><strong>Nombre: </strong> ${elem.name}</p>
                     <p style = "margin-left: 20px"><strong>Apellido: </strong>${elem.lastName}</p>
-                    <p style = "margin-left: 20px" class=""><strong>Documento: </strong>Sin información</p>
+                    <p style = "margin-left: 20px" class=""><strong>Año de nacimiento: </strong>${elem.yearOfBirth}</p>
                     <p style = "margin-left: 20px" class=""><strong>Edad: </strong>${elem.age}</p>
+                    <p style = "margin-left: 20px" class=""><strong>Casa: </strong>${elem.house}</p>
                 </div>
             </div> 
             `
-      estudiantesDiv.appendChild(nuevoEstudianteDiv)
-      localStorage.setItem("estudiantesHP", JSON.stringify(data))
-  
-    }}
+      estudiantesHP.appendChild(nuevoEstudianteDiv)
+    }
+  arrayProcessed=true}  
  
 
   //Creo funcion para cargar estudiantes
@@ -84,6 +91,7 @@ class sistemaEstudiantes {
     }
 }    
 
+//Funcion que imprime el registro cargado.
 
 function verRegistro(array) {
   estudiantesDiv.innerHTML = ""
@@ -107,7 +115,9 @@ function verRegistro(array) {
 
 //Funcion que vacia todos los datos del registro
 function borroRegistro (){
-          estudiantesDiv.remove()
+          estudiantesDiv.remove() 
+          estudiantesHP.innerHTML=" "
+          arrayProcessed=false
           localStorage.removeItem("estudiantes")
 
 }
@@ -171,9 +181,19 @@ buscarPorDocumento.addEventListener("click", ()=>{
       }
     })
   })
+  
 btnJSON.addEventListener("click", ()=>{
-  arrayHP()
+  if(!arrayProcessed){
+    arrayHP()
+  }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'La información ya fue registrada en el sistema. No es posible cargarla más de una vez',
+    })  
+  }
 })
+
 
 
 

@@ -1,5 +1,5 @@
 [
-    {"id": "9e3f7ce4",
+    {"id": "HP-1",
     "name": "Harry",
     "lastName":"Potter",
     "species": "human",
@@ -19,7 +19,7 @@
     "image": "https://ik.imagekit.io/hpapi/harry.jpg"
   },
   {
-    "id": "4c7e6819",
+    "id": "HP-2",
     "name": "Hermione",
     "lastName": "Granger",
     "species": "human",
@@ -48,8 +48,8 @@
     "image": "https://ik.imagekit.io/hpapi/hermione.jpeg"
   },
   {
-    "id": "c3b1f9a5",
-    "name": "Ron",
+    "id": "HP-3",
+    "name": "Ronald",
     "lastName":"Weasley",
     "species": "human",
     "gender": "male",

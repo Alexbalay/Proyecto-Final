@@ -8,31 +8,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/scss/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="src/scss/main.css">
 </head>
-<body>
-
-    <nav class="nav nav-pills flex-column flex-sm-row">
-        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="index.html">Home</a>
-        <a class="flex-sm-fill text-sm-center nav-link disabled" href="index.html">Próximamente</a>
-        <a class="flex-sm-fill text-sm-center nav-link disabled" href="index.html">Próximamente</a>
-        
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">SRE V2.0</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
-        <body>
-          
-          
+    </header>
+
+        <body class="gradient_bg">
           <div class="container botonCambioTema">
             <button id="btnCambiarModoOscuro" type="button" class="btn btn-outline-dark btn-sm">Cambiar a modo oscuro</button>
             <button id="btnCambiarModoClaro" type="button" class="btn btn-outline-light btn-sm">Cambiar a modo claro</button>
+
           </div> 
-      
           <div id="divTitulo">
               <h1 class= "animate__animated animate__fadeIn" id="titulo">Bienvenido al sistema de registro de estudiantes</h1>
           </div>
+
           <div id="separador">
-      
           </div>
+
           <div id="buttons">
             <button id="btnRegistrarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalRegistrarEstudiante" class="boton btn btn-primary">Registrar estudiante</button>
             <button id="btnBuscarEstudiante" data-bs-toggle="modal" data-bs-target="#idModalBuscarEstudiante" class="boton btn btn-primary">Buscar estudiante por DNI</button>
@@ -40,10 +53,12 @@
             <button  id= "cargoJSON" type="button" class="boton btn btn-primary">Importar estudiantes desde archivo</button>
             <button  id= "btnEliminarRegistro" type="button" class="boton btn btn-danger">Eliminar datos del registro</button> 
           </div>
+
       <!-- DIV DONDE SE VAN A AGREGAR LOS DATOS DEL ARRAY ESTUDIANTES CUANDO SE PRESIONE EL BOTON DE MOSTRAR REGISTRO-->
           <div class="container">
             <div id="estudiantes" class="row"></div>
         </div> 
+
       <!--Div donde van los datos del array obtenido del archivo .JSON-->
         <div class="container">
           <div id="estudiantesHP" class="row"></div>
@@ -113,12 +128,16 @@
           </div>
         </div>
       </div>
+
       <!--Script Bootstrap-->
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      
       <!--Script SweetAlert2-->
-        <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      
       <!--Script JS-->
         <script src="./src/js/main.js"></script>
 </body>
+
 </html>
 

@@ -75,5 +75,69 @@
     ],
     "alive": true,
     "image": "https://ik.imagekit.io/hpapi/ron.jpg"
+  },
+  {
+    "id": "HP-4",
+    "name": "Draco",
+    "lastName": "Malfoy",
+    "alternate_names": [
+      
+    ],
+    "species": "human",
+    "gender": "male",
+    "house": "Slytherin",
+    "dateOfBirth": "05-06-1980",
+    "yearOfBirth": 1980,
+    "age": 42,
+    "wizard": true,
+    "ancestry": "pure-blood",
+    "eyeColour": "grey",
+    "hairColour": "blonde",
+    "wand": {
+      "wood": "hawthorn",
+      "core": "unicorn tail-hair",
+      "length": 10
+    },
+    "patronus": "",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false,
+    "actor": "Tom Felton",
+    "alternate_actors": [
+      
+    ],
+    "alive": true,
+    "image": "https://ik.imagekit.io/hpapi/draco.jpg"
+  },
+  {
+    "id": "HP-5",
+    "name": "Minerva",
+    "lastName":"McGonagall",
+    "alternate_names": [
+      
+    ],
+    "species": "human",
+    "gender": "female",
+    "house": "Gryffindor",
+    "dateOfBirth": "04-10-1925",
+    "age": 97,
+    "yearOfBirth": 1925,
+    "wizard": true,
+    "ancestry": "half-blood",
+    "eyeColour": "",
+    "hairColour": "black",
+    "wand": {
+      "wood": "fir",
+      "core": "dragon heartstring",
+      "length": null
+    },
+    "patronus": "tabby cat",
+    "hogwartsStudent": false,
+    "hogwartsStaff": true,
+    "actor": "Dame Maggie Smith",
+    "alternate_actors": [
+      
+    ],
+    "alive": true,
+    "image": "https://ik.imagekit.io/hpapi/mcgonagall.jpg"
   }
 ]

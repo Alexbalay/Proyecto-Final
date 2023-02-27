@@ -20,7 +20,7 @@ let btnModoClaro = document.getElementById("btnCambiarModoClaro");
 let idDarkMode = document.getElementById("darkMode");
 let btnJSON = document.getElementById("cargoJSON");
 let estudiantesHP = document.getElementById("estudiantesHP");
-
+//Variables
 let arrayProcessed = false;
 
 //Leo archivo .JSON con Async Await y aplico en DOM
